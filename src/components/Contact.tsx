@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-0" : "opacity-0"}`}>
           <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">Vieni a Trovarci</p>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-cream">
-            Contatti<span className="text-gold">.</span>
+            Contatti 
           </h2>
         </div>
 
@@ -66,10 +66,24 @@ const Contact: React.FC = () => {
               </div>
             </div>
             <div>
-              <p className="text-gold uppercase tracking-[0.2em] text-xs mb-3">Contatto</p>
-              <p className="text-cream/70">Tel: <span className="text-cream">+39 351 4929304</span></p>
-              <p className="text-cream/70">Email: <span className="text-cream">shock.pub1@gmail.com</span></p>
-            </div>
+              <p className="text-gold uppercase tracking-[0.2em] text-xs mb-3">Contatti</p>
+              <p className="text-cream/70">
+                Tel:{" "}
+                <a 
+                  href="tel:+393514929304" 
+                  className="text-cream hover:text-gold transition-colors duration-300"
+                >
+                  +39 351 4929304
+                </a>
+              </p>              <p className="text-cream/70">
+                Email:{" "}
+                <a 
+                  href="mailto:shock.pub1@gmail.com" 
+                  className="text-cream hover:text-gold transition-colors duration-300"
+                >
+                  shock.pub1@gmail.com
+                </a>
+              </p>            </div>
             <div className="flex gap-5">
               {[
                 { name: "Instagram", url: "https://www.instagram.com/shockbar_/" },

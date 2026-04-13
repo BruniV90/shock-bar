@@ -7,15 +7,15 @@ git commit -m "update"
 git push
 
 
-DIMENSIONI LOGO NAVBAR
 
 Policy Cookies
 
 
-I NOSTRI DRINK -> Le nostre proposte / Food&Beverage
+KARAOKE
+GALLERIA DINAMICA
 
-Icona favicon.svg in index.html
-Indirizzo mail shock.pub1@gmail.com
+
+Indirizzo mail shock.pub1@gmail.com da cambiare appena ho il dominio
 Link TikTok??
 
 

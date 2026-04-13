@@ -58,7 +58,7 @@ const Menu: React.FC = () => {
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-0" : "opacity-0"}`}>
           <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">Le nostre proposte</p>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-cream">
-            Il Menu<span className="text-gold">.</span>
+            Il Menu
           </h2>
         </div>
 
