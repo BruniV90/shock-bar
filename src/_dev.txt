@@ -2,7 +2,9 @@ npm run dev
 
 https://shock-bar.vercel.app/
 
-git add . && git commit -m "update" && git push
+git add .
+git commit -m "update"
+git push
 
 
 DIMENSIONI LOGO NAVBAR
