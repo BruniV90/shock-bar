@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useInView } from "../hooks/useInView";
 
 const images = [
-  { src: "https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=600&q=80", alt: "Cocktail servito al bancone" },
-  { src: "https://images.unsplash.com/photo-1560512823-829485b8bf24?w=600&q=80", alt: "Atmosfera del bar" },
-  { src: "https://images.unsplash.com/photo-1578922746465-3a80a228f223?w=600&q=80", alt: "Drink signature" },
-  { src: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=600&q=80", alt: "Interni del locale" },
-  { src: "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=600&q=80", alt: "Cocktail colorato" },
-  { src: "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=600&q=80", alt: "Bartender al lavoro" },
+  { src: "/src/img/ig/ig001.jpg", alt: "Immagine 1" },  
+  { src: "/src/img/ig/ig002.jpg", alt: "Immagine 2" },
+  { src: "/src/img/ig/ig003.jpg", alt: "Immagine 3" },
+  { src: "/src/img/ig/ig004.jpg", alt: "Immagine 4" },
+  { src: "/src/img/ig/ig005.jpg", alt: "Immagine 5" },
+  { src: "/src/img/ig/ig006.jpg", alt: "Immagine 6" },
 ];
 
 const Gallery: React.FC = () => {

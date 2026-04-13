@@ -12,8 +12,8 @@ const About: React.FC = () => {
           <div className={`relative ${isVisible ? "animate-fade-in-up opacity-0" : "opacity-0"}`}>
             <div className="aspect-[4/5] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&q=80"
-                alt="Bartender crafting cocktails"
+                src="\src\img\ig\ig000.jpg"
+                alt="Shock Bar interior"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -22,19 +22,21 @@ const About: React.FC = () => {
 
           {/* Text */}
           <div className={`${isVisible ? "animate-fade-in-up opacity-0 delay-300" : "opacity-0"}`}>
-            <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">La Nostra Storia</p>
+            <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">Chi siamo</p>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-cream">
-              Un'esperienza sensoriale<span className="text-gold">.</span>
+              Cerchi un locale unico nel suo genere?
             </h2>
+            <br />
             <div className="space-y-6 text-cream/60 leading-relaxed">
               <p>
-                Shock Bar nasce dalla passione per la mixology d'avanguardia e il desiderio di creare uno spazio dove ogni dettaglio racconta una storia. Ogni cocktail è un'opera d'arte, pensata per sorprendere e deliziare.
+                Pronti ad aprire gli occhi e chiudere la noia? Shock Bar è l'esperienza che non ti aspetti. Tra colori accesi, arredi eclettici e drink stravaganti, ogni dettaglio è pensato per rompere la monotonia e accendere i sensi. Ispirato ai locali underground di New York, questo spazio è un mix di arte, musica e sapori intensi. Se ami l’imprevedibile e sei in cerca di emozioni vere, Shock è il posto giusto per te.
               </p>
               <p>
-                I nostri bartender, veri artigiani del gusto, selezionano ingredienti di prima qualità per creare combinazioni uniche che sfidano le convenzioni, in un ambiente che fonde eleganza contemporanea e calore italiano.
-              </p>
+                Colazione, pranzo, aperitivo o serata tra amici: qui ogni momento è un piccolo evento. Siete pronti a farvi stupire?
+            </p>
             </div>
-            <div className="mt-10 flex gap-12">
+            
+{/*             <div className="mt-10 flex gap-12">
               <div>
                 <p className="font-serif text-4xl text-gold">50+</p>
                 <p className="text-sm text-cream/40 uppercase tracking-wider mt-1">Cocktail Signature</p>
@@ -43,7 +45,8 @@ const About: React.FC = () => {
                 <p className="font-serif text-4xl text-gold">5</p>
                 <p className="text-sm text-cream/40 uppercase tracking-wider mt-1">Anni di Esperienza</p>
               </div>
-            </div>
+            </div> */}
+            
           </div>
         </div>
       </div>

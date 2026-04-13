@@ -1,0 +1,20 @@
+npm run dev
+
+https://shock-bar.vercel.app/
+
+git add . && git commit -m "update" && git push
+
+
+DIMENSIONI LOGO NAVBAR
+
+Policy Cookies
+
+
+I NOSTRI DRINK -> Le nostre proposte / Food&Beverage
+
+Icona favicon.svg in index.html
+Indirizzo mail shock.pub1@gmail.com
+Link TikTok??
+
+
+Recensioni?!

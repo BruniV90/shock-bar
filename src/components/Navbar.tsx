@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center">
           <img 
-            src="https://lirp.cdn-website.com/6662e3ce/dms3rep/multi/opt/0WOSX00000FOWKh4AP_logoshock-9be715de-1920w.png  " 
+            src="src/img/logo.png" 
             alt="Shock Bar Logo" 
             className="h-8 md:h-10 w-auto object-contain" 
           />

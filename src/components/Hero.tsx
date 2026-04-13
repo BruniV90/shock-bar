@@ -15,13 +15,21 @@ const Hero: React.FC = () => (
     {/* Content */}
     <div className="relative z-10 text-center px-6 max-w-4xl">
       <p className="text-gold uppercase tracking-[0.4em] text-sm md:text-base mb-6 animate-fade-in opacity-0">
-        Cocktail Bar d'Autore
+        Colazioni & Pranzi
       </p>
-      <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[0.9] mb-8 animate-fade-in-up opacity-0 delay-200 text-cream">
-        SHOCK<span className="text-gold">.</span>
+      <h1 className="mb-8 animate-fade-in-up opacity-0 delay-200">
+        <img 
+          src="src/img/shock.png" 
+          alt="Shock Bar Logo" 
+          className="h-auto w-[250px] sm:w-[400px] md:w-[500px] lg:w-[600px] mx-auto"
+        />
       </h1>
+      <p className="text-gold uppercase tracking-[0.4em] text-sm md:text-base mb-6 animate-fade-in opacity-0">
+        Cocktail Bar & Aperitivi
+      </p>
+
       <p className="text-cream/60 text-lg md:text-xl max-w-xl mx-auto mb-10 animate-fade-in-up opacity-0 delay-400 font-light">
-        Dove l'arte della mixology incontra l'atmosfera più esclusiva della città
+        Dove l'arte incontra il gusto tra cocktail ricercati e aperitivi d'autore
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 delay-600">
         <a
