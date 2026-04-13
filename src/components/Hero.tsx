@@ -19,7 +19,7 @@ const Hero: React.FC = () => (
       </p>
       <h1 className="mb-8 animate-fade-in-up opacity-0 delay-200">
         <img 
-          src="src/img/shock.png" 
+          src="img/shock.png" 
           alt="Shock Bar Logo" 
           className="h-auto w-[250px] sm:w-[400px] md:w-[500px] lg:w-[600px] mx-auto"
         />

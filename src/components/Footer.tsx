@@ -5,7 +5,7 @@ const Footer: React.FC = () => (
     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <a href="#" className="flex items-center">
         <img 
-        src="src/img/logo.png" 
+        src="img/logo.png" 
         alt="Shock Bar Logo" 
         className="h-8 md:h-10 w-auto object-contain" 
         />

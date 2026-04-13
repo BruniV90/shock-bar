@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useInView } from "../hooks/useInView";
 
 const images = [
-  { src: "src/img/ig/ig001.jpg", alt: "Immagine 1" },  
-  { src: "/src/img/ig/ig002.jpg", alt: "Immagine 2" },
-  { src: "/src/img/ig/ig003.jpg", alt: "Immagine 3" },
-  { src: "/src/img/ig/ig004.jpg", alt: "Immagine 4" },
-  { src: "/src/img/ig/ig005.jpg", alt: "Immagine 5" },
-  { src: "/src/img/ig/ig006.jpg", alt: "Immagine 6" },
+  { src: "img/ig/ig001.jpg", alt: "Immagine 1" },  
+  { src: "img/ig/ig002.jpg", alt: "Immagine 2" },
+  { src: "img/ig/ig003.jpg", alt: "Immagine 3" },
+  { src: "img/ig/ig004.jpg", alt: "Immagine 4" },
+  { src: "img/ig/ig005.jpg", alt: "Immagine 5" },
+  { src: "img/ig/ig006.jpg", alt: "Immagine 6" },
 ];
 
 const Gallery: React.FC = () => {
