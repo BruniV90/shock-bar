@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useInView } from "../hooks/useInView";
 
 const images = [
-  { src: "\src\img\ig\ig001.jpg", alt: "Immagine 1" },  
+  { src: "src/img/ig/ig001.jpg", alt: "Immagine 1" },  
   { src: "/src/img/ig/ig002.jpg", alt: "Immagine 2" },
   { src: "/src/img/ig/ig003.jpg", alt: "Immagine 3" },
   { src: "/src/img/ig/ig004.jpg", alt: "Immagine 4" },
