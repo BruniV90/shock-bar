@@ -40,7 +40,6 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-24 md:py-32 bg-dark relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-gold/30" />
       <div ref={ref} className="max-w-7xl mx-auto px-6">
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-0" : "opacity-0"}`}>
           <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">Vieni a Trovarci</p>
