@@ -13,12 +13,12 @@ interface Drink {
 
 const drinks: Record<Category, Drink[]> = {
   Signature: [
-    { name: "Shock & Awe", description: "Gin, chartreuse, lime, basilico, soda al cetriolo", price: "€14", tag: "Best Seller" },
-    { name: "Velvet Noir", description: "Vodka infusa al carbone, Lillet, lampone, prosecco", price: "€15" },
-    { name: "Golden Hour", description: "Rum aged, passion fruit, vaniglia, bitter arancia", price: "€14" },
-    { name: "Smoke Signal", description: "Mezcal, Aperol, agave, lime, sale affumicato", price: "€15", tag: "Nuovo" },
-    { name: "Midnight Garden", description: "Gin, elderflower, lavanda, tonica premium", price: "€13" },
-    { name: "Electric Negroni", description: "Gin, Campari, vermouth rosso, twist al pompelmo", price: "€14" },
+    { name: "Bramble", description: "Gin, succo di lime, liquore alle more", price: "€9", tag: "Best Seller" },
+    { name: "Blue Lady", description: "Gin, Blue curacao, succo di lime", price: "€7" },
+    { name: "White Lady", description: "Gin, Triple sec, succo di limone", price: "€7" },
+    { name: "Tequila Sunrise", description: "Tequila, succo d’arancia, granatina", price: "€9", tag: "Nuovo" },
+    { name: "Gin Basil Nash", description: "Gin, succo di limone, sciroppo di zucchero, basilico", price: "€8" },
+    { name: "Passionfruit Daiquiri", description: "Rum bianco, succo di lime, sciroppo di zucchero, passion fruit", price: "€8" },
   ],
   Classici: [
     { name: "Old Fashioned", description: "Bourbon, zucchero di canna, Angostura, scorza d'arancia", price: "€12" },
@@ -56,7 +56,7 @@ const Menu: React.FC = () => {
     <section id="menu" className="py-24 md:py-32 bg-dark-light">
       <div ref={ref} className="max-w-6xl mx-auto px-6">
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-0" : "opacity-0"}`}>
-          <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">I Nostri Drink</p>
+          <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">Le nostre proposte</p>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-cream">
             Il Menu<span className="text-gold">.</span>
           </h2>
@@ -106,6 +106,7 @@ const Menu: React.FC = () => {
         </div>
       </div>
 <div className={`text-center mt-12 mb-16 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
+
   <a 
     href="https://irp.cdn-website.com/6662e3ce/files/uploaded/MENU-+COCKTAILS.Finale.pdf" 
     target="_blank" 
@@ -113,7 +114,7 @@ const Menu: React.FC = () => {
     className="group inline-block"
   >
     <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4 hover:text-cream transition-colors duration-300 cursor-pointer">
-      Scarica il menu completo
+      e tantissimo altro <br/>Scarica il menu completo
     </p>
     {/* Opzionale: una riga decorativa sotto il testo */}
     <div className="h-[1px] w-full bg-gold/30 group-hover:bg-gold transition-colors duration-300" />

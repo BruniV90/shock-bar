@@ -12,7 +12,7 @@ const About: React.FC = () => {
           <div className={`relative ${isVisible ? "animate-fade-in-up opacity-0" : "opacity-0"}`}>
             <div className="aspect-[4/5] overflow-hidden">
               <img
-                src="\src\img\ig\ig000.jpg"
+                src="img\ig\ig000.jpg"
                 alt="Shock Bar interior"
                 className="w-full h-full object-cover"
                 loading="lazy"
