@@ -1,55 +1,55 @@
 import React, { useState } from "react";
 import { useInView } from "../hooks/useInView";
 
-const categories = ["Signature", "Classici", "Spirits", "Analcolici", "Food"] as const;
+const categories = ["Cocktail", "Special", "Shots", "Analcolici", "Food"] as const;
 type Category = typeof categories[number];
 
 interface Drink {
   name: string;
   description: string;
-  price: string;
   tag?: string;
 }
 
 const drinks: Record<Category, Drink[]> = {
-  Signature: [
-    { name: "Bramble", description: "Gin, succo di lime, liquore alle more", price: "€9", tag: "Best Seller" },
-    { name: "Blue Lady", description: "Gin, Blue curacao, succo di lime", price: "€7" },
-    { name: "White Lady", description: "Gin, Triple sec, succo di limone", price: "€7" },
-    { name: "Tequila Sunrise", description: "Tequila, succo d’arancia, granatina", price: "€9", tag: "Nuovo" },
-    { name: "Gin Basil Nash", description: "Gin, succo di limone, sciroppo di zucchero, basilico", price: "€8" },
-    { name: "Passionfruit Daiquiri", description: "Rum bianco, succo di lime, sciroppo di zucchero, passion fruit", price: "€8" },
+  Cocktail: [
+    { name: "Spritz", description: "Prosecco, Aperol/Campari", tag: "Best Seller" },
+    { name: "Mojito", description: "Rum bianco, lime, selz, zucchero, menta" },
+    { name: "Negroni", description: "Bitter, vermouth, gin" },
+    { name: "Gin tonic", description: "Gin, tonica" },
+    { name: "Moscow mule", description: "Vodka, ginger beer, succo di lime" },
+    { name: "Margarita", description: "Tequila, Triple sec, succo di lime" },
+    { name: "Pina colada", description: "Rum, crema di cocco, succo di ananas, succo di lime" },
   ],
-  Classici: [
-    { name: "Old Fashioned", description: "Bourbon, zucchero di canna, Angostura, scorza d'arancia", price: "€12" },
-    { name: "Negroni", description: "Gin, Campari, Vermouth Rosso", price: "€11" },
-    { name: "Espresso Martini", description: "Vodka, Kahlúa, espresso fresco, crema di caffè", price: "€12" },
-    { name: "Margarita", description: "Tequila reposado, Cointreau, lime fresco, sale", price: "€12" },
-    { name: "Manhattan", description: "Rye whiskey, vermouth rosso, Angostura", price: "€13" },
-    { name: "Daiquiri", description: "Rum bianco, lime, sciroppo di zucchero", price: "€11" },
+  Special: [
+    { name: "Saserac", description: "Cognac/Rye whiskey, assenzio, zucchero, orange bitter" },
+    { name: "Old fashioned", description: "Whisky, angostura, zucchero" },
+    { name: "Bramble", description: "Gin, succo di lime, liquore alle more" },
+    { name: "American Shock", description: "Vermouth, amaro, soda al pompelmo" },
   ],
-  Spirits: [
-    { name: "Whisky Selection", description: "Selezione di single malt e blended premium", price: "da €10" },
-    { name: "Gin Premium", description: "Botaniche selezionate, servito con tonica artigianale", price: "da €12" },
-    { name: "Rum Collection", description: "Aged rum dal mondo, neat o on the rocks", price: "da €11" },
-    { name: "Tequila & Mezcal", description: "Selezione artigianale messicana", price: "da €12" },
+  Shots: [
+    { name: "Amari DU-IT", description: "Selezione della Distilleria Urbana" },
+    { name: "Amaro Fabbrizii", description: "L'amaro ritrovato" },
+    { name: "Vodka al caramello", description: "Un abbinamento particolare, quanto azzeccato" },
+    { name: "Tequila", description: "Un grande classico" },
+
+
   ],
   Analcolici: [
-    { name: "Virgin Mojito", description: "Lime, menta, zucchero di canna, soda", price: "€8" },
-    { name: "Sunset Cooler", description: "Passion fruit, mango, lime, ginger beer", price: "€9" },
-    { name: "Garden Tonic", description: "Cetriolo, basilico, elderflower, tonica", price: "€8" },
-    { name: "Berry Smash", description: "Frutti di bosco, limone, sciroppo di vaniglia, soda", price: "€9" },
+    { name: "Sex off the beach", description: "Succo di pesca, succo di arancia, succo al cranberry", },
+    { name: "Gin tonic zero", description: "Gin zero, tonic", },
+    { name: "Moscow mule zero", description: "Ginger beer, menta, succo lime", },
+    { name: "Virgin mojito", description: "Lime, zucchero, menta, tonica", },
   ],
   Food: [
-    { name: "Snack & Tapas", description: "Selezione di stuzzichini gourmet per accompagnare i tuoi drink", price: "da €5" },
-    { name: "Piatto di Formaggi", description: "Formaggi artigianali italiani e internazionali, confetture e miele", price: "€12" },
-    { name: "Tagliere di Salumi", description: "Salumi di alta qualità, accompagnati da pane artigianale", price: "€14" },
-    { name: "Bruschette Gourmet", description: "Pane croccante con topping creativi e stagionali", price: "€7" },
+    { name: "Taglieri", description: "Selezione di affettati e formaggi" },
+    { name: "Pinse", description: "Per ogni gusto" },
+    { name: "Schiacciate", description: "Da farcire con prodotti sempre freschi" },
+
   ],
 };
 
 const Menu: React.FC = () => {
-  const [active, setActive] = useState<Category>("Signature");
+  const [active, setActive] = useState<Category>("Special");
   const { ref, isVisible } = useInView();
 
   return (
@@ -100,7 +100,6 @@ const Menu: React.FC = () => {
                 </div>
                 <p className="text-cream/40 text-sm leading-relaxed">{d.description}</p>
               </div>
-              <p className="font-serif text-xl text-gold ml-6 mt-0.5">{d.price}</p>
             </div>
           ))}
         </div>
