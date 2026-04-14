@@ -12,7 +12,8 @@ interface Drink {
 
 const drinks: Record<Category, Drink[]> = {
   Cocktail: [
-    { name: "Spritz", description: "Prosecco, Aperol/Campari", tag: "Best Seller" },
+//    { name: "Spritz", description: "Prosecco, Aperol/Campari", tag: "Best Seller" },
+    { name: "Spritz", description: "Prosecco, Aperol/Campari" },
     { name: "Mojito", description: "Rum bianco, lime, selz, zucchero, menta" },
     { name: "Negroni", description: "Bitter, vermouth, gin" },
     { name: "Gin tonic", description: "Gin, tonica" },
