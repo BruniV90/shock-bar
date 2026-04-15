@@ -19,7 +19,7 @@ const events = [
   {
     day: "SAB",
     title: "KaraokeNight",
-    time: "19:00 — 00:00",
+    time: "19:00 - 00:00",
     description: "Il Karaoke a Pipa di Cocco.",
     img: "img/events/karaoke.jpeg",
   },
@@ -74,11 +74,18 @@ const Events: React.FC = () => {
       <br />
       <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 delay-600">
 
+        <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">Organizziamo festa di laurea, compleanni e tanto altro</p>
+
+      </div>
+
+
+      <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 delay-600">
+
         <a
           href="#contact"
           className="uppercase tracking-[0.2em] text-sm bg-gold text-dark px-10 py-4 hover:bg-gold-light transition-colors duration-300 font-medium"
         >
-          Contattaci per organizzare il tuo evento da noi
+          Contattaci
         </a>
       </div>
       {/* --- LIGHTBOX (Solo foto a tutto schermo) --- */}
