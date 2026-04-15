@@ -129,11 +129,18 @@ const Contact: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-16">
           <div className={`space-y-10 ${isVisible ? "animate-fade-in-up opacity-0 delay-200" : "opacity-0"}`}>
-            <div>
-              <p className="text-gold uppercase tracking-[0.2em] text-xs mb-3">Indirizzo</p>
-              <p className="font-serif text-xl text-cream">Via Gianfrancesco Pagnini, 1/3R</p>
-              <p className="text-cream/50">50134 - Firenze</p>
-            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Shock+Bar+Via+Gianfrancesco+Pagnini+1+3R+Firenze&query_place_id=ChIJDTw6knhXKhMR4KMejVHp5sU"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group cursor-pointer"
+            >
+              <div>
+                <p className="text-gold uppercase tracking-[0.2em] text-xs mb-3 group-hover:text-gold-light transition-colors">Indirizzo</p>
+                <p className="font-serif text-xl text-cream group-hover:text-white transition-colors">Via Gianfrancesco Pagnini, 1/3R</p>
+                <p className="text-cream/50">50134 - Firenze</p>
+              </div>
+            </a>
             <div>
               <p className="text-gold uppercase tracking-[0.2em] text-xs mb-3">Orari</p>
               <div className="space-y-1 text-cream/70">
