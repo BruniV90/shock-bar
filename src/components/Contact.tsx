@@ -120,7 +120,7 @@ const Contact: React.FC = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Mappa Shock Bar"
                 /* MODIFICHE: Opacità piena, rimosso il contrasto e invertito il filtro al passaggio del mouse */
-                className="opacity-100 grayscale-[0.25] contrast-[0.9] transition-all duration-700 group-hover:grayscale-0 group-hover:contrast-[1]"
+                className="opacity-100 grayscale-[0.05] contrast-[0.9] transition-all duration-700 group-hover:grayscale-0 group-hover:contrast-[1]"
               />
             </div>
           </div>
