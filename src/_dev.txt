@@ -1,27 +1,20 @@
-npm run dev
-
 https://shock-bar.vercel.app/
+
+npm run dev
 
 git add .
 git commit -m "update"
 git push
 
 
-Policy Cookies
+MAPPA DI GOOGLE
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.149677501246!2d11.2518246!3d43.7905071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a5778923a3c0d%3A0xc5e6e9518d1ea3e0!2sShock%20Bar!5e0!3m2!1sit!2sit!4v1776769058706!5m2!1sit!2sit"
 
-MAPPA DI GOOGLE?!
-MENU
-KARAOKE
+
 GALLERIA DINAMICA
 
 ORARI DI APERTURA
 
 Indirizzo mail shock.pub1@gmail.com da cambiare appena ho il dominio
-Link TikTok??
-
 
 Recensioni?!
-
-Policy
-riga 4 index.html
-<script type="text/javascript" src="https://embeds.iubenda.com/widgets/6bb71717-1223-4340-a122-35708d1dabf6.js"></script>    <meta charset="UTF-8" />

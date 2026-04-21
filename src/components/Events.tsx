@@ -6,7 +6,7 @@ const events = [
     day: "GIO",
     title: "Studentì allo Shock",
     time: "16:00 - 00:00",
-    description: "Tutti i giovedì, offerte che uniscono.",
+    description: "Tutti i giovedì, offerte che uniscono!",
     img: "img/events/giovedi.jpg",
   },
   /*  {
@@ -20,7 +20,7 @@ const events = [
     day: "SAB",
     title: "KaraokeNight",
     time: "19:00 - 00:00",
-    description: "Il Karaoke a Pipa di Cocco.",
+    description: "Il Karaoke a Pipa di Cocco!",
     img: "img/events/karaoke.jpeg",
   },
 ];
@@ -45,12 +45,12 @@ const Events: React.FC = () => {
             <div
               key={e.title}
               onClick={() => setSelectedImage(e.img)}
-              className={`group relative ove>rflow-hidden bg-dark-card border border-dark-border hover:border-gold/30 transition-all duration-500 cursor-pointer 
+              className={`group relative overflow-hidden bg-dark-card border border-dark-border hover:border-gold/30 transition-all duration-500 cursor-pointer 
         w-full md:w-[calc(45%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] max-w-[400px] ${isVisible ? "animate-fade-in-up" : ""
                 }`}
               style={{ animationDelay: `${0.2 + i * 0.15}s` }}
             >
-              {/* ... tutto il resto del contenuto della card rimane uguale ... */}
+              {/* Immagine e Badge Giorno */}
               <div className="aspect-[16/10] overflow-hidden">
                 <img
                   src={e.img}
@@ -62,28 +62,32 @@ const Events: React.FC = () => {
                   {e.day}
                 </div>
               </div>
+
+              {/* Contenuto Testuale */}
               <div className="p-6">
                 <p className="text-gold/70 text-sm mb-2">{e.time}</p>
-                <h3 className="font-serif text-2xl mb-3 group-hover:text-gold transition-colors duration-300">{e.title}</h3>
-                <p className="text-cream/40 text-sm leading-relaxed">{e.description}</p>
+                <h3 className="font-serif text-2xl mb-3 text-cream group-hover:text-gold transition-colors duration-300">
+                  {e.title}
+                </h3>
+                <p className="text-cream/50 text-sm leading-relaxed">
+                  {e.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
       <br />
-      <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 delay-600">
+      <div className="flex flex-col items-center gap-6 text-center animate-fade-in-up opacity-100 delay-600 px-4">
+        {/* Testo: rimosso mb-4 per gestire lo spazio tramite il gap del padre */}
+        <p className="text-gold uppercase tracking-[0.3em] text-xs md:text-sm leading-relaxed max-w-md">
+          Organizziamo feste di laurea, compleanni e tanto altro
+        </p>
 
-        <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">Organizziamo festa di laurea, compleanni e tanto altro</p>
-
-      </div>
-
-
-      <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 delay-600">
-
+        {/* Bottone: w-full su mobile per una migliore "tappabilità", auto su desktop */}
         <a
           href="#contact"
-          className="uppercase tracking-[0.2em] text-sm bg-gold text-dark px-10 py-4 hover:bg-gold-light transition-colors duration-300 font-medium"
+          className="w-full sm:w-auto uppercase tracking-[0.2em] text-sm bg-gold text-dark px-10 py-4 hover:bg-gold-light transition-colors duration-300 font-bold"
         >
           Contattaci
         </a>

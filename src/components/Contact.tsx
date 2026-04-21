@@ -108,10 +108,10 @@ const Contact: React.FC = () => {
               <p className="font-serif text-2xl text-cream group-hover:text-white transition-colors">Via Gianfrancesco Pagnini, 1/3R</p>
               <p className="text-cream/50 italic">50134 - Firenze</p>
             </a>
-            
-            <div className="w-full h-[300px] md:h-[350px] rounded-2xl overflow-hidden border border-dark-border/50 bg-dark relative group shadow-2xl">
+
+            <div className="w-full h-[300px] md:h-[350px] rounded-2xl overflow-hidden border border-dark-border/50 bg-white relative group shadow-2xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.4343163273183!2d11.258832676755497!3d43.7846152441113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a5404f2963665%3A0xb36b3017a419266b!2sVia%20Gianfrancesco%20Pagnini%2C%201%2F3r%2C%2050134%20Firenze%20FI!5e0!3m2!1sit!2sit!4v1710000000000!5m2!1sit!2sit"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.149677501246!2d11.2518246!3d43.7905071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a5778923a3c0d%3A0xc5e6e9518d1ea3e0!2sShock%20Bar!5e0!3m2!1sit!2sit!4v1776769058706!5m2!1sit!2sit"
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: 'block' }}
@@ -119,7 +119,8 @@ const Contact: React.FC = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Mappa Shock Bar"
-                className="grayscale opacity-60 contrast-[1.1] transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+                /* MODIFICHE: Opacità piena, rimosso il contrasto e invertito il filtro al passaggio del mouse */
+                className="opacity-100 grayscale-[0.25] contrast-[0.9] transition-all duration-700 group-hover:grayscale-0 group-hover:contrast-[1]"
               />
             </div>
           </div>
@@ -167,7 +168,7 @@ const Contact: React.FC = () => {
 
         {/* PARTE BASSA: Orari | Contatti | Social (Tutto su una riga) */}
         <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 py-12 border-t border-dark-border/50 ${isVisible ? "animate-fade-in opacity-100 delay-500" : "opacity-0"}`}>
-          
+
           {/* Orari */}
           <div className="flex flex-col items-center md:items-start">
             <p className="text-gold uppercase tracking-[0.2em] text-[10px] mb-4">Orari di Apertura</p>
