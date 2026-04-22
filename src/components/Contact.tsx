@@ -175,7 +175,7 @@ const Contact: React.FC = () => {
             <div className="text-sm text-cream/70 space-y-1">
               <p>Lun-Ven: <span className="text-cream">06:30 - 23:45</span></p>
               <p>Sab-Dom: <span className="text-cream">08:00 - 02:00</span></p>
-              <p className="text-[10px] text-cream/30 italic">Mercoledì Chiuso</p>
+              <p className="text-[10px] text-cream/30 italic">MERCOLEDI' CHIUSO</p>
             </div>
           </div>
 

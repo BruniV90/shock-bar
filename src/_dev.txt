@@ -15,6 +15,9 @@ GALLERIA DINAMICA
 
 ORARI DI APERTURA
 
+MAIL
 Indirizzo mail shock.pub1@gmail.com da cambiare appena ho il dominio
+npm install express nodemailer cors dotenv
+
 
 Recensioni?!
