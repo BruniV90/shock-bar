@@ -22,7 +22,7 @@ const drinks: Record<Category, Drink[]> = {
     { name: "Pina colada", description: "Rum, crema di cocco, succo di ananas, succo di lime" },
   ],
   Special: [
-    { name: "Saserac", description: "Cognac/Rye whiskey, assenzio, zucchero, orange bitter" },
+    { name: "Sazerac", description: "Cognac/Rye whiskey, assenzio, zucchero, orange bitter" },
     { name: "Old fashioned", description: "Whisky, angostura, zucchero" },
     { name: "Bramble", description: "Gin, succo di lime, liquore alle more" },
     { name: "American Shock", description: "Vermouth, amaro, soda al pompelmo" },
