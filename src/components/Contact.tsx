@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
                 {/* Mercoledì - Testo piccolo e pulito */}
                 <div className="flex items-center justify-between pt-1">
                   <span className="text-sm text-cream/70 font-medium">
-                    Mercoledì chiuso
+                    <p className="text-cream/50 italic mt-1 text-sm">Mercoledì chiuso</p>
                   </span>
                 </div>
               </div>
@@ -137,7 +137,7 @@ const Contact: React.FC = () => {
             {/* Blocco 2: Contatti Diretti & Social */}
 <div className="p-8 rounded-2xl bg-dark-card/40 border border-dark-border/50 shadow-lg">
   <p className="text-gold uppercase tracking-[0.2em] text-xs font-medium border-b border-gold/10 pb-3 mb-6">
-    Contatti & Social
+    Seguici
   </p>
 
   <div className="flex flex-col sm:flex-row items-center justify-between gap-6">

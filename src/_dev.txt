@@ -14,10 +14,8 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.149677501246!2d1
 GALLERIA DINAMICA
 
 ORARI DI APERTURA
+MODIFICARE INDEX.HTML per gli orari
 
 MAIL
 Indirizzo mail shock.pub1@gmail.com da cambiare appena ho il dominio
 npm install express nodemailer cors dotenv
-
-
-Recensioni?!
