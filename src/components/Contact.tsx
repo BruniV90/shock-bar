@@ -135,75 +135,75 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Blocco 2: Contatti Diretti & Social */}
-            <div className="p-8 rounded-2xl bg-dark-card/40 border border-dark-border/50 shadow-lg">
-              <p className="text-gold uppercase tracking-[0.2em] text-xs font-medium border-b border-gold/10 pb-3 mb-6">
-                Seguici
-              </p>
+<div className="p-8 rounded-2xl bg-dark-card/40 border border-dark-border/50 shadow-lg">
+  <p className="text-gold uppercase tracking-[0.2em] text-xs font-medium border-b border-gold/10 pb-3 mb-6">
+    Contatti & Social
+  </p>
 
-              <div className="flex flex-col sm:flex-row items-stretch justify-between gap-6">
+  <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+    
+    {/* Colonna Sinistra: Telefono ed Email */}
+    <div className="flex flex-col gap-3 w-full sm:w-auto flex-1 min-w-0">
+      
+      {/* Telefono */}
+      <a
+        href="tel:+393514929304"
+        className="flex items-center gap-3.5 p-3.5 rounded-xl bg-dark/60 border border-dark-border/40 text-cream hover:text-gold hover:border-gold/30 transition-all duration-300 group min-w-0 h-[68px]"
+      >
+        <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-dark transition-all duration-300 shrink-0">
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+        </div>
+        <div className="min-w-0 flex-1">
+          <span className="block text-[11px] uppercase tracking-wider text-cream/50 font-medium mb-0.5">Telefono</span>
+          <span className="block text-sm font-semibold text-cream group-hover:text-gold transition-colors duration-300 truncate">
+            +39 351 492 9304
+          </span>
+        </div>
+      </a>
 
-                {/* Colonna Sinistra: Telefono ed Email */}
-                <div className="flex flex-col gap-3 w-full sm:w-auto flex-1 min-w-0">
+      {/* Email */}
+      <a
+        href="mailto:shock.pub1@gmail.com"
+        className="flex items-center gap-3.5 p-3.5 rounded-xl bg-dark/60 border border-dark-border/40 text-cream hover:text-gold hover:border-gold/30 transition-all duration-300 group min-w-0 h-[68px]"
+      >
+        <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-dark transition-all duration-300 shrink-0">
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div className="min-w-0 flex-1">
+          <span className="block text-[11px] uppercase tracking-wider text-cream/50 font-medium mb-0.5">Email</span>
+          <span className="block text-sm font-semibold text-cream group-hover:text-gold transition-colors duration-300 truncate break-all" title="shock.pub1@gmail.com">
+            shock.pub1@gmail.com
+          </span>
+        </div>
+      </a>
 
-                  {/* Telefono */}
-                  <a
-                    href="tel:+393514929304"
-                    className="flex items-center gap-3.5 p-3.5 rounded-xl bg-dark/60 border border-dark-border/40 text-cream hover:text-gold hover:border-gold/30 transition-all duration-300 group min-w-0 h-[68px]"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-dark transition-all duration-300 shrink-0">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <span className="block text-[11px] uppercase tracking-wider text-cream/50 font-medium mb-0.5">Telefono</span>
-                      <span className="block text-sm font-semibold text-cream group-hover:text-gold transition-colors duration-300 truncate">
-                        +39 351 492 9304
-                      </span>
-                    </div>
-                  </a>
+    </div>
 
-                  {/* Email */}
-                  <a
-                    href="mailto:shock.pub1@gmail.com"
-                    className="flex items-center gap-3.5 p-3.5 rounded-xl bg-dark/60 border border-dark-border/40 text-cream hover:text-gold hover:border-gold/30 transition-all duration-300 group min-w-0 h-[68px]"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-dark transition-all duration-300 shrink-0">
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <span className="block text-[11px] uppercase tracking-wider text-cream/50 font-medium mb-0.5">Email</span>
-                      <span className="block text-sm font-semibold text-cream group-hover:text-gold transition-colors duration-300 truncate break-all" title="shock.pub1@gmail.com">
-                        shock.pub1@gmail.com
-                      </span>
-                    </div>
-                  </a>
+    {/* Divisore: Orizzontale su Mobile / Verticale su Desktop */}
+    <div className="w-full h-px sm:w-px sm:h-[148px] bg-dark-border/30 shrink-0" />
 
-                </div>
+    {/* Colonna Destra: 4 icone IN FILA su Mobile, matrice 2x2 su Desktop */}
+    <div className="grid grid-cols-4 sm:grid-cols-2 gap-3 shrink-0 sm:h-[148px] sm:w-[148px] w-full justify-items-center">
+      {socials.map((social) => (
+        <a
+          key={social.name}
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={social.name}
+          className="w-12 h-12 sm:w-full sm:h-full rounded-xl bg-dark/60 border border-dark-border/40 flex items-center justify-center text-gold hover:bg-gold hover:text-dark hover:scale-105 transition-all duration-300 shadow-md [&>svg]:w-6 [&>svg]:h-6"
+        >
+          {social.icon}
+        </a>
+      ))}
+    </div>
 
-                {/* Divisore Verticale per Desktop / Orizzontale per Mobile */}
-                <div className="w-full h-px sm:w-px sm:h-auto self-stretch bg-dark-border/30 my-1 sm:my-0" />
-
-                {/* Colonna Destra: Icone Social in 2x2 perfettamente proporzionate all'altezza dei contatti */}
-                <div className="grid grid-cols-2 grid-rows-2 gap-3 shrink-0 h-[148px] w-[148px]">
-                  {socials.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.name}
-                      className="w-full h-full rounded-xl bg-dark/60 border border-dark-border/40 flex items-center justify-center text-gold hover:bg-gold hover:text-dark hover:scale-105 transition-all duration-300 shadow-md [&>svg]:w-6 [&>svg]:h-6"
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
-
-              </div>
-            </div>
+  </div>
+</div>
 
           </div>
         </div>
