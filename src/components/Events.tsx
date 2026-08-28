@@ -4,7 +4,7 @@ import { useInView } from "../hooks/useInView";
 const events = [
   {
     day: "GIO",
-    title: "StudenDI' allo Shock",
+    title: "StudenDI'0 allo Shock",
     time: "16:00 - 00:00",
     description: "Tutti i giovedì, offerte che uniscono!",
     img: "img/events/giovedi.jpg",
