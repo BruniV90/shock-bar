@@ -15,6 +15,8 @@ GALLERIA DINAMICA
 
 ORARI DI APERTURA
 MODIFICARE INDEX.HTML per gli orari
+COLLEGARE Google Search Console
+https://search.google.com/test/rich-results
 
 MAIL
 Indirizzo mail shock.pub1@gmail.com da cambiare appena ho il dominio
