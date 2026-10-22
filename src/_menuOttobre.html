@@ -1,0 +1,349 @@
+import React, { useState } from "react";
+import { useInView } from "../hooks/useInView";
+
+// Struttura delle sezioni e sotto-categorie
+const mainSections = ["Drink List", "Food List"] as const;
+type MainSection = (typeof mainSections)[number];
+
+const subCategories = {
+  "Drink List": ["Signature", "Classic", "Mocktail", "Amari & Shots"] as const,
+  "Food List": ["Hamburger", "Panini", "Pinse"] as const,
+};
+
+type DrinkSubCategory = (typeof subCategories["Drink List"])[number];
+type FoodSubCategory = (typeof subCategories["Food List"])[number];
+type SubCategory = DrinkSubCategory | FoodSubCategory;
+
+interface MenuItem {
+  name: string;
+  description: string;
+  side?: string;
+  tag?: string;
+  isSpicy?: boolean;
+  image?: string; // Facoltativo: se omesso o vuoto, non appare alcun riquadro
+}
+
+// Menu organizzato per Sotto-Categoria
+const menuData: Record<SubCategory, MenuItem[]> = {
+  // --- DRINK LIST ---
+  Signature: [
+    {
+      name: "American Shock",
+      description: "Vermouth, amaro, soda al pompelmo",
+      tag: "Specialty",
+      // image: "/images/american-shock.jpg", // Se commentato o omesso, il riquadro NON appare
+    },
+    {
+      name: "Sazerac",
+      description: "Cognac/Rye whiskey, assenzio, zucchero, orange bitter",
+    },
+    {
+      name: "Bramble",
+      description: "Gin, succo di lime, liquore alle more",
+    },
+  ],
+  Classic: [
+    {
+      name: "Spritz",
+      description: "Prosecco, Aperol/Campari, soda",
+      tag: "Best Seller",
+      image: "/images/spritz.jpg", // Con immagine
+    },
+    {
+      name: "Mojito",
+      description: "Rum bianco, lime, selz, zucchero, menta",
+    },
+    { name: "Negroni", description: "Bitter, vermouth, gin" },
+    { name: "Gin Tonic", description: "Gin, tonica premium" },
+    {
+      name: "Moscow Mule",
+      description: "Vodka, ginger beer, succo di lime",
+    },
+    {
+      name: "Margarita",
+      description: "Tequila, Triple sec, succo di lime",
+    },
+    {
+      name: "Pina Colada",
+      description: "Rum, crema di cocco, succo di ananas, succo di lime",
+    },
+    {
+      name: "Old Fashioned",
+      description: "Whisky, angostura, zucchero",
+    },
+  ],
+  Mocktail: [
+    {
+      name: "Sex off the Beach",
+      description: "Succo di pesca, succo di arancia, succo al cranberry",
+    },
+    {
+      name: "Gin Tonic Zero",
+      description: "Gin 0.0%, acqua tonica",
+    },
+    {
+      name: "Moscow Mule Zero",
+      description: "Ginger beer, menta fresca, succo di lime",
+    },
+    {
+      name: "Virgin Mojito",
+      description: "Lime, zucchero di canna, menta, soda",
+    },
+  ],
+  "Amari & Shots": [
+    {
+      name: "Amari DU-IT",
+      description: "Selezione esclusiva della Distilleria Urbana",
+      tag: "Consigliato",
+    },
+    {
+      name: "Amaro Fabbrizii",
+      description: "L'amaro ritrovato della tradizione",
+    },
+    {
+      name: "Vodka al Caramello",
+      description: "Un abbinamento particolare, quanto azzeccato",
+    },
+    { name: "Tequila", description: "Un grande classico con sale e limone" },
+  ],
+
+  // --- FOOD LIST ---
+  Hamburger: [
+    {
+      name: "Michelangelo",
+      description: "Burger 150g, cheddar, insalata, pomodoro, cipolla candita, salsa bacon jam",
+      side: "con contorno di chips di patate al forno",
+      image: "/images/michelangelo.jpg", // Mostra la foto
+    },
+    {
+      name: "Boccaccio",
+      description: "Burger 150g, formaggio fuso, cipolla candita, pomodorino, salsa smoke pepper",
+      side: "con contorno di chips di patate al forno",
+      // Nessuna foto -> nessun riquadro
+    },
+    {
+      name: "Dante",
+      description: "Burger 150g, cheddar, insalata, cipolla candita, ketchup giallo, salsa chipotle",
+      side: "con contorno di chips di patate al forno",
+      isSpicy: true,
+    },
+    {
+      name: "Savonarola",
+      description: "Burger 150g, formaggio fuso, cipolla candita, salsa bacon jam, BBQ al whisky",
+      side: "con contorno di chips di patate al forno",
+    },
+    {
+      name: "Caterina",
+      description: "Burger vegetale, insalata, pomodoro, salsa apple onion, salsa yogurt",
+      side: "con contorno di chips di patate al forno",
+      tag: "Vegetariano",
+    },
+  ],
+  Panini: [
+    {
+      name: "Il Matto",
+      description: "Prosciutto crudo, stracciatella, salsa mango habanero",
+    },
+    {
+      name: "L’Appeso",
+      description: "Salame, pecorino, salsa apple onion",
+    },
+    {
+      name: "L’Eretico",
+      description: "Gorgonzola, 'nduja, pomodoro semi secco, salsa apple onion",
+      isSpicy: true,
+    },
+    {
+      name: "Il Padrino",
+      description: "Mortadella, stracciatella, crema di pistacchio",
+    },
+    {
+      name: "L’Alchimista",
+      description: "Prosciutto crudo, stracciatella, cipolla candita",
+    },
+    {
+      name: "Il Titano",
+      description: "Finocchiona, pecorino, mango habanero",
+    },
+    {
+      name: "La Poetessa",
+      description: "Melanzane, pomodorino, salsa apple onion",
+    },
+  ],
+  Pinse: [
+    {
+      name: "Pinsa Margherita",
+      description: "Salsa di pomodoro biologico, mozzarella di bufala e basilico fresco",
+    },
+    {
+      name: "Pinsa Speciale",
+      description: "Mozzarella, mortadella, granella di pistacchio e burrata",
+      tag: "Special",
+    },
+  ],
+};
+
+// Componente SVG per il simbolo del piccante (chili)
+const ChiliIcon = () => (
+  <svg
+    className="inline-block w-3.5 h-3.5 ml-1.5 text-gold align-middle"
+    viewBox="0 0 16 17"
+    role="img"
+    aria-label="piccante"
+  >
+    <title>Piccante</title>
+    <g transform="translate(0 17) scale(1 -1)" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2.2 10.8C2.2 10.2 2.6 9.8 5.2 9.8C7.6 9.8 8.6 10.2 8.6 10.8C8.6 6.5 10.5 3.6 14 2.3C7.8 .6 2.2 4.6 2.2 10.8Z" />
+      <path d="M5.4 12.4C5.4 13.8 6.2 14.8 7.8 15.2" />
+    </g>
+  </svg>
+);
+
+const Menu: React.FC = () => {
+  const [mainSection, setMainSection] = useState<MainSection>("Drink List");
+  const [subCategory, setSubCategory] = useState<SubCategory>("Signature");
+  const { ref, isVisible } = useInView();
+
+  const handleMainSectionChange = (section: MainSection) => {
+    setMainSection(section);
+    setSubCategory(subCategories[section][0]);
+  };
+
+  return (
+    <section id="menu" className="py-24 md:py-32 bg-dark-light">
+      <div ref={ref} className="max-w-6xl mx-auto px-6">
+        {/* Intestazione */}
+        <div
+          className={`text-center mb-12 transition-all duration-700 ${
+            isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
+          }`}
+        >
+          <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">
+            Le nostre proposte
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-cream">
+            Il Menu
+          </h2>
+        </div>
+
+        {/* 1. SEZIONE PRINCIPALE (Drink List / Food List) */}
+        <div
+          className={`flex justify-center gap-6 mb-10 transition-all duration-700 ${
+            isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
+          }`}
+        >
+          {mainSections.map((sec) => (
+            <button
+              key={sec}
+              onClick={() => handleMainSectionChange(sec)}
+              className={`text-base md:text-lg uppercase tracking-[0.2em] font-serif px-8 py-3 transition-all duration-300 border-b-2 ${
+                mainSection === sec
+                  ? "border-gold text-gold font-bold"
+                  : "border-transparent text-cream/50 hover:text-cream"
+              }`}
+            >
+              {sec}
+            </button>
+          ))}
+        </div>
+
+        {/* 2. SOTTO-CATEGORIE */}
+        <div
+          className={`flex flex-wrap justify-center gap-2 md:gap-3 mb-14 transition-all duration-700 ${
+            isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
+          }`}
+        >
+          {subCategories[mainSection].map((sub) => (
+            <button
+              key={sub}
+              onClick={() => setSubCategory(sub)}
+              className={`text-xs md:text-sm uppercase tracking-[0.15em] px-5 py-2.5 transition-all duration-300 border rounded-full ${
+                subCategory === sub
+                  ? "bg-gold text-dark border-gold font-semibold shadow-md"
+                  : "border-dark-border text-cream/60 hover:border-gold/50 hover:text-cream"
+              }`}
+            >
+              {sub}
+            </button>
+          ))}
+        </div>
+
+        {/* LISTA PRODOTTI */}
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 min-h-[300px]">
+          {menuData[subCategory]?.map((item, i) => (
+            <div
+              key={item.name}
+              className={`group flex items-center gap-4 py-5 border-b border-dark-border hover:border-gold/40 transition-colors duration-300 ${
+                isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
+              }`}
+              style={{ animationDelay: `${0.1 + i * 0.05}s` }}
+            >
+              {/* Il riquadro dell'immagine viene renderizzato SOLO se item.image esiste ed è una stringa non vuota */}
+              {item.image && item.image.trim() !== "" && (
+                <div className="relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0 overflow-hidden rounded-lg border border-dark-border group-hover:border-gold/40 transition-colors">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              )}
+
+              {/* Informazioni testo - si espande automaticamente a 100% se non c'è la foto */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-3 mb-1.5">
+                  <h3 className="font-serif text-xl text-cream group-hover:text-gold transition-colors duration-300 truncate">
+                    {item.name}
+                  </h3>
+                  {item.tag && (
+                    <span className="text-[10px] uppercase tracking-wider bg-gold/15 text-gold border border-gold/20 px-2 py-0.5 rounded-full flex-shrink-0">
+                      {item.tag}
+                    </span>
+                  )}
+                </div>
+                <p className="text-cream/50 text-sm leading-relaxed">
+                  {item.description}
+                  {item.isSpicy && <ChiliIcon />}
+                </p>
+                {item.side && (
+                  <p className="text-cream text-xs italic mt-1">{item.side}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* FOOTER MENU CON NOTE E LINK PDF */}
+      <div
+        className={`text-center mt-16 mb-8 transition-all duration-700 ${
+          isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="text-xs text-cream/50 leading-relaxed tracking-wider mb-8">
+          Prodotto surgelato
+          <br />
+          Per gli allergeni consultare il libro ingredienti
+        </div>
+
+        <a
+          href="https://irp.cdn-website.com/6662e3ce/files/uploaded/MENU-+COCKTAILS.Finale.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-block text-center"
+        >
+          <p className="text-gold uppercase tracking-[0.25em] text-sm mb-2 hover:text-cream transition-colors duration-300">
+            Vuoi scoprire di più?
+            <br />
+            <span className="text-xs text-cream/70 font-sans tracking-widest group-hover:text-gold transition-colors">
+              Scarica il menu PDF completo
+            </span>
+          </p>
+          <div className="h-[1px] w-full bg-gold/30 group-hover:bg-gold transition-colors duration-300" />
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default Menu;
