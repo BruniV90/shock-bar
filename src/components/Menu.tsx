@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useInView } from "../hooks/useInView";
 
 // Struttura delle sezioni e sotto-categorie
 const mainSections = ["Drink List", "Food List"] as const;
@@ -23,7 +22,7 @@ interface MenuItem {
   image?: string;
 }
 
-// Menu organizzato per Sotto-Categoria (immagini commentate)
+// Menu organizzato per Sotto-Categoria
 const menuData: Record<SubCategory, MenuItem[]> = {
   // --- DRINK LIST ---
   Signature: [
@@ -127,7 +126,7 @@ const menuData: Record<SubCategory, MenuItem[]> = {
       // image: "/images/vodka-caramello.jpg",
     },
     { 
-      name: "Teodor", 
+      name: "Tequila", 
       description: "Un grande classico con sale e limone",
       // image: "/images/tequila.jpg",
     },
@@ -240,7 +239,6 @@ const ChiliIcon = () => (
 const Menu: React.FC = () => {
   const [mainSection, setMainSection] = useState<MainSection>("Drink List");
   const [subCategory, setSubCategory] = useState<SubCategory>("Signature");
-  const { ref, isVisible } = useInView();
 
   const handleMainSectionChange = (section: MainSection) => {
     setMainSection(section);
@@ -249,13 +247,9 @@ const Menu: React.FC = () => {
 
   return (
     <section id="menu" className="py-24 md:py-32 bg-dark-light">
-      <div ref={ref} className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Intestazione */}
-        <div
-          className={`text-center mb-12 transition-all duration-700 ${
-            isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
-          }`}
-        >
+        <div className="text-center mb-12">
           <p className="text-gold uppercase tracking-[0.3em] text-sm mb-4">
             Le nostre proposte
           </p>
@@ -265,11 +259,7 @@ const Menu: React.FC = () => {
         </div>
 
         {/* 1. SEZIONE PRINCIPALE (Drink List / Food List) */}
-        <div
-          className={`flex justify-center gap-6 mb-10 transition-all duration-700 ${
-            isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
-          }`}
-        >
+        <div className="flex justify-center gap-6 mb-10">
           {mainSections.map((sec) => (
             <button
               key={sec}
@@ -286,11 +276,7 @@ const Menu: React.FC = () => {
         </div>
 
         {/* 2. SOTTO-CATEGORIE */}
-        <div
-          className={`flex flex-wrap justify-center gap-2 md:gap-3 mb-14 transition-all duration-700 ${
-            isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
-          }`}
-        >
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-14">
           {subCategories[mainSection].map((sub) => (
             <button
               key={sub}
@@ -308,13 +294,10 @@ const Menu: React.FC = () => {
 
         {/* LISTA PRODOTTI */}
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 min-h-[300px]">
-          {menuData[subCategory]?.map((item, i) => (
+          {menuData[subCategory]?.map((item) => (
             <div
               key={item.name}
-              className={`group flex items-center gap-4 py-5 border-b border-dark-border hover:border-gold/40 transition-colors duration-300 ${
-                isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
-              }`}
-              style={{ animationDelay: `${0.1 + i * 0.05}s` }}
+              className="group flex items-center gap-4 py-5 border-b border-dark-border hover:border-gold/40 transition-colors duration-300"
             >
               {item.image && item.image.trim() !== "" && (
                 <div className="relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0 overflow-hidden rounded-lg border border-dark-border group-hover:border-gold/40 transition-colors">
@@ -351,11 +334,7 @@ const Menu: React.FC = () => {
       </div>
 
       {/* FOOTER MENU CON NOTE E LINK PDF */}
-      <div
-        className={`text-center mt-16 mb-8 transition-all duration-700 ${
-          isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
-        }`}
-      >
+      <div className="text-center mt-16 mb-8">
         <div className="text-xs text-cream/50 leading-relaxed tracking-wider mb-8">
           Prodotto surgelato
           <br />
